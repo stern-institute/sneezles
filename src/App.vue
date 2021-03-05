@@ -59,12 +59,7 @@ export default Vue.extend({
     attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
 
-    circles: [
-      {
-        center: latLng(30, 30),
-        radius: 2e4,
-      }
-    ] as Array<Circle>
+    circles: [] as Array<Circle>
   }),
   methods: {
     progressCircles() {
@@ -82,12 +77,11 @@ export default Vue.extend({
 
       if (Math.random() > this.new_circles_per_second * this.update_rate/1000) {
         // new circle
+        const lat = Math.random()*180 - 90;
+        const lon = Math.random()*360 - 180;
         this.circles.push({
           radius: this.starting_radius,
-          center: latLng(
-            Math.random()*360 - 180,
-            Math.random()*180 - 90
-          )
+          center: latLng(lat, lon)
         })
       }
 
