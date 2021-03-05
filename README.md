@@ -1,4 +1,4 @@
-# sneezles-vue
+# sneezles
 
 ## Project setup
 ```
