@@ -16,9 +16,10 @@
 
       <l-circle
         v-for="circle in circles"
-        :key="circle.radius"
+        :key="circle.center.toString()"
         :lat-lng="circle.center"
         :radius="circle.radius"
+        :color="circle.colour"
       />
 
     </l-map>
@@ -33,9 +34,12 @@ import HelloWorld from './components/HelloWorld.vue';
 import { LatLng, latLng} from 'leaflet';
 import { LMap, LTileLayer, LCircle } from 'vue2-leaflet'
 
+import points_json from '@/assets/points.json'
+
 interface Circle {
   center: LatLng
   radius: number
+  colour: string
 }
 
 export default Vue.extend({
@@ -59,13 +63,14 @@ export default Vue.extend({
     attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
 
-    circles: [] as Array<Circle>
+    circles: [] as Array<Circle>,
+    points: points_json,
   }),
   methods: {
     progressCircles() {
-      var i = this.circles.length;
 
-      while (i--) {  // JS-thonic hack - can remove items while iterating
+      // JS-thonic hack - can remove items while iterating
+      for (let i = this.circles.length-1; i>0; i--) {
         const circle = this.circles[i]
 
         circle.radius += this.radius_increase_per_second * this.update_rate / 1000
@@ -77,11 +82,15 @@ export default Vue.extend({
 
       if (Math.random() > this.new_circles_per_second * this.update_rate/1000) {
         // new circle
-        const lat = Math.random()*180 - 90;
-        const lon = Math.random()*360 - 180;
+        const i = this.circles.length
+        const lat = this.points[i].lat
+        const lon = this.points[i].lng
+        const z = this.points[i].z
+
         this.circles.push({
           radius: this.starting_radius,
-          center: latLng(lat, lon)
+          center: latLng(lat, lon),
+          colour: z > 0 ? 'green' : 'blue',
         })
       }
 
