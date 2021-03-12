@@ -78,7 +78,7 @@ export default {
 
 <style scoped>
   .v-expansion-panel-content {
-    padding-top: 3px;
+    margin-top: 20px;
   }
   .v-expansion-panel-header--active {
     background-color: #5f77bb;
