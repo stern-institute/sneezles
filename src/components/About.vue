@@ -2,16 +2,16 @@
   <v-row class="d-flex" align="center" no-gutters>
     <v-col cols="12" sm="2">
       <v-row>
-          <v-col cols="8" offset="2" md="12" offset-md="0">
-      <v-img src="/Bless%20University.png"></v-img>
-              </v-col>
-        <v-col cols="6" md="12">
-      <v-img max-height="400px" src="/Stern%20Institute.png"></v-img>
+        <v-col cols="8" offset="2" md="12" offset-md="0">
+          <v-img src="/Bless%20University.png"></v-img>
         </v-col>
-          <v-col cols="6" md="12">
-      <v-img src="/Tes%20Souhaits%20Studio.png"></v-img>
-          </v-col>
-          </v-row>
+        <v-col cols="6" md="12">
+          <v-img max-height="400px" src="/Stern%20Institute.png"></v-img>
+        </v-col>
+        <v-col cols="6" md="12">
+          <v-img src="/Tes%20Souhaits%20Studio.png"></v-img>
+        </v-col>
+      </v-row>
     </v-col>
     <v-col cols="12" md="8">
       <p>
@@ -56,11 +56,18 @@
       </p>
     </v-col>
 
-    <v-col cols="2">
-      <v-carousel></v-carousel>
+    <v-col cols="12">
+      <v-carousel>
+        <v-carousel-item
+          v-for="i of Array(5).keys()"
+          :src="`/team${i + 1}.jpeg`"
+          :key="i"
+        />
+      </v-carousel>
     </v-col>
   </v-row>
 </template>
+
 <script lang="ts">
 export default {
   name: "About",
