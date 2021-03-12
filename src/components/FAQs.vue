@@ -1,6 +1,6 @@
 <template>
   <v-col cols="12" md="10" offset-md="1">
-    <v-expansion-panels>
+    <v-expansion-panels focusable>
       <v-expansion-panel>
         <v-expansion-panel-header> 1. What is this? </v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -75,3 +75,13 @@ export default {
   name: "FAQs",
 };
 </script>
+
+<style scoped>
+  .v-expansion-panel-content {
+    padding-top: 3px;
+  }
+  .v-expansion-panel-header--active {
+    background-color: #5f77bb;
+    color: #e5e8e9;
+  }
+</style>
