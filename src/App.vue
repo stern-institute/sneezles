@@ -82,7 +82,7 @@ export default Vue.extend({
 
       if (Math.random() > this.new_circles_per_second * this.update_rate/1000) {
         // new circle
-        const i = this.circles.length
+        const i = Math.floor(Math.random() * this.points.length)
         const lat = this.points[i].lat
         const lon = this.points[i].lng
         const z = this.points[i].z
