@@ -1,11 +1,19 @@
 <template>
   <v-row class="d-flex" align="center">
-    <v-col cols="2">
+    <v-col cols="12" sm="2">
+      <v-row>
+          <v-col cols="8" offset="2" sm="12" offset-sm="0">
       <v-img src="/Bless%20University.png"></v-img>
+              </v-col>
+        <v-col cols="6" sm="12">
       <v-img max-height="400px" src="/Stern%20Institute.png"></v-img>
+        </v-col>
+          <v-col cols="6" sm="12">
       <v-img src="/Tes%20Souhaits%20Studio.png"></v-img>
+          </v-col>
+          </v-row>
     </v-col>
-    <v-col cols="8">
+    <v-col cols="12" sm="8">
       <p>
         Sternutations! And welcome to Sneezl.es. This is a ground-breaking
         project mapping sneezes in real time, wherever they happen. So often
