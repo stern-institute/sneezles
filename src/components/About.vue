@@ -1,5 +1,5 @@
 <template>
-  <v-row class="d-flex" align="center">
+  <v-row class="d-flex" align="center" no-gutters>
     <v-col cols="12" sm="2">
       <v-row>
           <v-col cols="8" offset="2" md="12" offset-md="0">
