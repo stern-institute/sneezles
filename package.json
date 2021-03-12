@@ -19,6 +19,7 @@
     "typescript": "^4.2.3",
     "vue": "^2.6.11",
     "vue-cli-plugin-vuetify": "^2.2.2",
+    "vue-scrollto": "^2.20.0",
     "vue2-leaflet": "^2.6.0",
     "vuetify": "^2.4.5",
     "vuetify-loader": "^1.7.2"

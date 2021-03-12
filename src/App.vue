@@ -2,22 +2,22 @@
   <v-app id="app">
     <v-app-bar>
       <v-tabs fixed-tabs>
-        <v-tab> Map </v-tab>
-        <v-tab> FAQ </v-tab>
-        <v-tab> About </v-tab>
+        <v-tab href="#" @click="$scrollTo('#app')"> Map </v-tab>
+        <v-tab href="#" @click="$scrollTo('#faq')"> FAQ </v-tab>
+        <v-tab href="#" @click="$scrollTo('#about')"> About </v-tab>
       </v-tabs>
     </v-app-bar>
 
-    <SneezleMap />
+    <SneezleMap id="map"/>
 
     <v-container>
       <v-divider />
-      <h1>FAQs</h1>
+      <h1 id="faq">FAQs</h1>
 
       <FAQs />
 
       <v-divider />
-      <h1 class="mt-4">About</h1>
+      <h1 id="about" class="mt-4">About</h1>
 
       <About />
 
