@@ -47,12 +47,18 @@
       </v-btn>
       <div class="flex-grow-1"></div>
     </v-row>
+
+    <v-btn icon @click="showFish = !showFish">
+      <svg-icon type="mdi" :path="showFish ? mdiFishOff : mdiFish" />
+    </v-btn>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import { LCircle, LMap, LTileLayer } from "vue2-leaflet";
+import SvgIcon from "@jamescoyle/vue-icon";
+import { mdiFish, mdiFishOff } from "@mdi/js";
 // eslint-disable-next-line no-unused-vars
 import { LatLng, latLng } from "leaflet";
 import points_json from "@/assets/points.json";
@@ -70,9 +76,13 @@ export default Vue.extend({
     LMap,
     LTileLayer,
     LCircle,
+    SvgIcon,
   },
   data: () => ({
     showLiveData: false,
+    showFish: true,
+    mdiFish,
+    mdiFishOff,
 
     update_rate: 100, // milliseconds between update
     radius_increase_per_second: 1e5,
@@ -86,14 +96,17 @@ export default Vue.extend({
     attribution:
       '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
 
-    circles: [] as Array<Circle>,
+    landCircles: [] as Array<Circle>,
+    seaCircles: [] as Array<Circle>,
     points: [] as Array<PointsJson>,
   }),
 
   computed: {
     circlesToShow(): Array<Circle> {
       if (!this.showLiveData) {
-        return this.circles;
+        return this.showFish
+          ? this.landCircles.concat(this.seaCircles)
+          : this.landCircles;
       } else {
         return [];
       }
@@ -102,14 +115,16 @@ export default Vue.extend({
   methods: {
     progressCircles() {
       // JS-thonic hack - can remove items while iterating
-      for (let i = this.circles.length - 1; i > 0; i--) {
-        const circle = this.circles[i];
+      for (const circleList of [this.landCircles, this.seaCircles]) {
+        for (let i = circleList.length - 1; i > 0; i--) {
+          const circle = circleList[i];
 
-        circle.radius +=
-          (this.radius_increase_per_second * this.update_rate) / 1000;
+          circle.radius +=
+            (this.radius_increase_per_second * this.update_rate) / 1000;
 
-        if (circle.radius >= this.max_radius) {
-          this.circles.splice(i, 1);
+          if (circle.radius >= this.max_radius) {
+            circleList.splice(i, 1);
+          }
         }
       }
 
@@ -127,9 +142,11 @@ export default Vue.extend({
         const point = this.points[i];
         this.points.splice(i, 1); // Remove point, so we don't reuse
 
-        if (!this.circles.map((c) => c.point_index).includes(i)) {
+        const circleList = point.z > 0 ? this.landCircles : this.seaCircles;
+
+        if (!circleList.map((c) => c.point_index).includes(i)) {
           // Keep point_index unique
-          this.circles.push({
+          circleList.push({
             radius: this.starting_radius,
             center: latLng(point.lat, point.lng),
             colour: point.z > 0 ? "green" : "blue",
