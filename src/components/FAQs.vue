@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="10" offset="1">
+  <v-col cols="12" md="10" offset-md="1">
     <v-expansion-panels>
       <v-expansion-panel>
         <v-expansion-panel-header> 1. What is this? </v-expansion-panel-header>
