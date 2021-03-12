@@ -10,24 +10,34 @@
 
     <SneezleMap />
 
-    <v-divider />
-    <h1>FAQs</h1>
+    <v-container>
+      <v-divider />
+      <h1>FAQs</h1>
 
-    <v-divider />
-    <h1>About</h1>
+      <FAQs />
 
-    <v-divider />
-    <h1>Get Involved!</h1>
+      <v-divider />
+      <h1 class="mt-4">About</h1>
+
+      <About />
+
+      <v-divider />
+      <h1>Get Involved!</h1>
+    </v-container>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import SneezleMap from "@/SneezleMap.vue";
+import SneezleMap from "@/components/SneezleMap.vue";
+import FAQs from "@/components/FAQs.vue";
+import About from "@/components/About.vue";
 
 export default Vue.extend({
   name: "App",
   components: {
+    About,
+    FAQs,
     SneezleMap,
   },
 });
