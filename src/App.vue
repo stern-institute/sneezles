@@ -16,7 +16,7 @@
 
       <l-circle
         v-for="circle in circles"
-        :key="circle.center.toString()"
+        :key="circle.point_index"
         :lat-lng="circle.center"
         :radius="circle.radius"
         :color="circle.colour"
@@ -40,6 +40,7 @@ interface Circle {
   center: LatLng
   radius: number
   colour: string
+  point_index: number
 }
 
 export default Vue.extend({
@@ -64,7 +65,7 @@ export default Vue.extend({
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
 
     circles: [] as Array<Circle>,
-    points: points_json,
+    points: [] as Array<PointsJson>,
   }),
   methods: {
     progressCircles() {
@@ -82,16 +83,23 @@ export default Vue.extend({
 
       if (Math.random() > this.new_circles_per_second * this.update_rate/1000) {
         // new circle
-        const i = Math.floor(Math.random() * this.points.length)
-        const lat = this.points[i].lat
-        const lon = this.points[i].lng
-        const z = this.points[i].z
 
-        this.circles.push({
-          radius: this.starting_radius,
-          center: latLng(lat, lon),
-          colour: z > 0 ? 'green' : 'blue',
-        })
+        if (this.points.length === 0) {
+          this.points = [...points_json]
+        }
+
+        const i = Math.floor(Math.random() * this.points.length)
+        const point = this.points[i]
+        this.points.splice(i, 1) // Remove point, so we don't reuse
+
+        if (!this.circles.map(c=>c.point_index).includes(i)) {  // Keep point_index unique
+          this.circles.push({
+            radius: this.starting_radius,
+            center: latLng(point.lat, point.lng),
+            colour: point.z > 0 ? 'green' : 'blue',
+            point_index: i,
+          })
+        }
       }
 
       setTimeout(this.progressCircles, this.update_rate)
