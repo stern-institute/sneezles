@@ -51,5 +51,6 @@ export default Vue.extend({
   text-align: center;
   background-color: #e5e8e9;
   color: #293371;
+  overflow-x: hidden;
 }
 </style>
