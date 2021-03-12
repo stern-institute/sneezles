@@ -15,7 +15,7 @@
 
       <l-circle
         v-for="circle in circlesToShow"
-        :key="circle.point_index"
+        :key="`${circle.point_index}:${circle.z}`"
         :lat-lng="circle.center"
         :radius="circle.radius"
         :color="circle.colour"
