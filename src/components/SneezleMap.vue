@@ -9,7 +9,13 @@
       ]"
       :options="{ zoomControl: false }"
       :center="center"
-      style="height: 500px; width: 100%"
+      style="
+        height: 500px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+      "
     >
       <l-tile-layer :url="url" :attribution="attribution" />
 
