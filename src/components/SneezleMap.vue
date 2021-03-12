@@ -150,6 +150,7 @@ export default Vue.extend({
             radius: this.starting_radius,
             center: latLng(point.lat, point.lng),
             colour: point.z > 0 ? "green" : "blue",
+            z: point.z,
             point_index: i,
           });
         }
