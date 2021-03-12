@@ -13,7 +13,7 @@
         </v-col>
       </v-row>
     </v-col>
-    <v-col cols="12" md="8">
+    <v-col cols="12" md="8" class="pa-4">
       <p>
         Sternutations! And welcome to Sneezl.es. This is a ground-breaking
         project mapping sneezes in real time, wherever they happen. So often
