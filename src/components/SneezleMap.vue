@@ -68,6 +68,7 @@ interface Circle {
   radius: number;
   colour: string;
   point_index: number;
+  z: number;
 }
 
 export default Vue.extend({
