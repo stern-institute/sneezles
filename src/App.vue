@@ -8,7 +8,7 @@
       </v-tabs>
     </v-app-bar>
 
-    <SneezleMap id="map"/>
+    <SneezleMap id="map" />
 
     <v-container>
       <v-divider />
@@ -24,6 +24,19 @@
       <v-divider />
       <h1>Get Involved!</h1>
     </v-container>
+
+    <v-footer>
+      <v-spacer />
+      &copy;2021 - Quentin Saint
+      <a href="https://test.com"
+        ><svg-icon color="#1da1f2" type="mdi" :path="mdiTwitter"
+      /></a>
+      <a href="https://test.com"><svg-icon type="mdi" :path="mdiEmail" /></a>
+      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        ><svg-icon color="#c4302b" type="mdi" :path="mdiYoutube"
+      /></a>
+      <v-spacer />
+    </v-footer>
   </v-app>
 </template>
 
@@ -32,6 +45,8 @@ import Vue from "vue";
 import SneezleMap from "@/components/SneezleMap.vue";
 import FAQs from "@/components/FAQs.vue";
 import About from "@/components/About.vue";
+import SvgIcon from "@jamescoyle/vue-icon";
+import { mdiTwitter, mdiEmail, mdiYoutube } from "@mdi/js";
 
 export default Vue.extend({
   name: "App",
@@ -39,7 +54,13 @@ export default Vue.extend({
     About,
     FAQs,
     SneezleMap,
+    SvgIcon,
   },
+  data: () => ({
+    mdiTwitter,
+    mdiEmail,
+    mdiYoutube,
+  }),
 });
 </script>
 
@@ -52,5 +73,8 @@ export default Vue.extend({
   background-color: #e5e8e9;
   color: #293371;
   overflow-x: hidden;
+}
+footer * {
+  margin-left: 5px;
 }
 </style>
