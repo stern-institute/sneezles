@@ -1,6 +1,13 @@
 <template>
   <v-app id="app">
     <v-app-bar>
+      <v-img
+        class="mr-4"
+        :width="$vuetify.breakpoint.xsOnly ? '60px' : '150px'"
+        max-height="50"
+        contain
+        src="/Stern%20Institute%20cropped.png"
+      />
       <v-tabs fixed-tabs>
         <v-tab href="#" @click="$scrollTo('#app')"> Map </v-tab>
         <v-tab href="#" @click="$scrollTo('#faq')"> FAQ </v-tab>
