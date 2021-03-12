@@ -56,7 +56,7 @@
       </p>
     </v-col>
 
-    <v-col cols="12">
+    <v-col cols="12" sm="6" offset-sm="3">
       <v-carousel>
         <v-carousel-item
           v-for="i of Array(5).keys()"
