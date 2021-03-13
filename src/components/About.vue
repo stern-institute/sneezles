@@ -3,13 +3,13 @@
     <v-col cols="12" md="2">
       <v-row>
         <v-col cols="8" offset="2" md="12" offset-md="0">
-          <v-img src="/Bless%20University.png"></v-img>
+          <v-img eager src="/Bless%20University.png"></v-img>
         </v-col>
         <v-col cols="6" md="12">
-          <v-img max-height="400px" src="/Stern%20Institute.png"></v-img>
+          <v-img eager max-height="400px" src="/Stern%20Institute.png"></v-img>
         </v-col>
         <v-col cols="6" md="12">
-          <v-img src="/Tes%20Souhaits%20Studio.png"></v-img>
+          <v-img eager src="/Tes%20Souhaits%20Studio.png"></v-img>
         </v-col>
       </v-row>
     </v-col>
