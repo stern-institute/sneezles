@@ -15,7 +15,7 @@
       </v-tabs>
     </v-app-bar>
 
-    <h1>Who's sneezing now?</h1>
+    <h1 class="mt-4">Who's sneezing now?</h1>
     <SneezleMap id="map" />
 
     <v-container>
