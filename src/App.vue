@@ -39,7 +39,7 @@
       <a href="https://test.com"
         ><svg-icon color="#1da1f2" type="mdi" :path="mdiTwitter"
       /></a>
-      <a href="https://test.com"><svg-icon type="mdi" :path="mdiEmail" /></a>
+      <a href="mailto:hotmail@sneezl.es"><svg-icon type="mdi" :path="mdiEmail" /></a>
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         ><svg-icon color="#c4302b" type="mdi" :path="mdiYoutube"
       /></a>
