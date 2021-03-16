@@ -43,6 +43,9 @@
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         ><svg-icon color="#c4302b" type="mdi" :path="mdiYoutube"
       /></a>
+      <a href="https://www.test.com"
+      ><svg-icon color="black" type="mdi" :path="mdiGithub"
+      /></a>
       <v-spacer />
     </v-footer>
   </v-app>
@@ -54,7 +57,7 @@ import SneezleMap from "@/components/SneezleMap.vue";
 import FAQs from "@/components/FAQs.vue";
 import About from "@/components/About.vue";
 import SvgIcon from "@jamescoyle/vue-icon";
-import { mdiTwitter, mdiEmail, mdiYoutube } from "@mdi/js";
+import { mdiTwitter, mdiEmail, mdiYoutube, mdiGithub } from "@mdi/js";
 
 export default Vue.extend({
   name: "App",
@@ -65,8 +68,9 @@ export default Vue.extend({
     SvgIcon,
   },
   data: () => ({
-    mdiTwitter,
     mdiEmail,
+    mdiGithub,
+    mdiTwitter,
     mdiYoutube,
   }),
 });
