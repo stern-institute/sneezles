@@ -36,7 +36,7 @@
     <v-footer>
       <v-spacer />
       &copy;2021 - Quentin Saint
-      <a href="https://test.com"
+      <a href="https://twitter.com/SneezlesProject"
         ><svg-icon color="#1da1f2" type="mdi" :path="mdiTwitter"
       /></a>
       <a href="mailto:hotmail@sneezl.es"><svg-icon type="mdi" :path="mdiEmail" /></a>
