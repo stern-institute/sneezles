@@ -43,7 +43,7 @@
       <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         ><svg-icon color="#c4302b" type="mdi" :path="mdiYoutube"
       /></a>
-      <a href="https://www.test.com"
+      <a href="https://github.com/stern-institute/sneezles"
       ><svg-icon color="black" type="mdi" :path="mdiGithub"
       /></a>
       <v-spacer />
