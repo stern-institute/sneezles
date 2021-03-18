@@ -62,8 +62,8 @@
         </v-expansion-panel-header>
         <v-expansion-panel-content>
           Good question! Yes! Talk to our sneez-sales team for a tour of our
-          groundbreaking technology, whether you want to use our product with
-          your own data, or not.
+          groundbreaking SaaS technology, whether you want to use our product
+          with your own data, or not.
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
@@ -77,11 +77,11 @@ export default {
 </script>
 
 <style scoped>
-  .v-expansion-panel-content {
-    margin-top: 20px;
-  }
-  .v-expansion-panel-header--active {
-    background-color: #5f77bb;
-    color: #e5e8e9;
-  }
+.v-expansion-panel-content {
+  margin-top: 20px;
+}
+.v-expansion-panel-header--active {
+  background-color: #5f77bb;
+  color: #e5e8e9;
+}
 </style>
