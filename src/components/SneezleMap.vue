@@ -87,7 +87,7 @@ export default Vue.extend({
   },
   data: () => ({
     showLiveData: false,
-    showFish: true,
+    showFish: false,
     mdiFish,
     mdiFishOff,
 
