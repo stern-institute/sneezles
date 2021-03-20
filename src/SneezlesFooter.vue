@@ -1,7 +1,7 @@
 <template>
   <v-footer>
     <v-spacer />
-    &copy;2021 - Quentin Saint
+    <span> &copy;2021 - Quentin Saint </span>
     <a href="https://twitter.com/SneezlesProject">
       <svg-icon color="#1da1f2" type="mdi" :path="mdiTwitter" />
     </a>
@@ -56,6 +56,6 @@ export default {
 
 <style>
 footer * {
-  margin-left: 5px;
+  margin-left: 3px;
 }
 </style>

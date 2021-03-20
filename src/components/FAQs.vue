@@ -52,7 +52,16 @@
       <v-expansion-panel>
         <v-expansion-panel-header> 5. What's next? </v-expansion-panel-header>
         <v-expansion-panel-content>
-          Good question! This high performance simulation…
+          <p>
+            Good question! This high performance simulation is just the tip of
+            our Citizen Science iceberg. We’re already looking ahead to our
+            “Face-Cast” Puffy-Face® atmospheric-pressure tracking initiative,
+            which will use facial recognition like never before.
+          </p>
+          <p>
+            We need <em>your</em> sneezes to help prove that people can’t wait
+            to give their bodies to science.
+          </p>
         </v-expansion-panel-content>
       </v-expansion-panel>
 
