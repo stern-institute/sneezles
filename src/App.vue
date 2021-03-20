@@ -2,6 +2,7 @@
   <v-app id="app">
     <v-app-bar>
       <v-img
+        eager
         class="mr-4"
         :width="$vuetify.breakpoint.xsOnly ? '60px' : '150px'"
         max-height="50"
