@@ -33,36 +33,7 @@
       <h1>Get Involved!</h1>
     </v-container>
 
-    <v-footer>
-      <v-spacer />
-      &copy;2021 - Quentin Saint
-      <a href="https://twitter.com/SneezlesProject">
-        <svg-icon color="#1da1f2" type="mdi" :path="mdiTwitter" />
-      </a>
-      <a href="mailto:hotmail@sneezl.es">
-        <svg-icon type="mdi" :path="mdiEmail" />
-      </a>
-      <v-tooltip top>
-        <template v-slot:activator="{ on, attrs }">
-          <a
-            v-bind="attrs"
-            v-on="on"
-            href="https://www.websitecarbon.com/website/sneezl-es/"
-          >
-            <svg-icon color="black" type="mdi" :path="mdiMoleculeCo2" />
-          </a>
-        </template>
-        WebsiteCarbon says: Only 0.43 g of CO<sub>2</sub> is produced every time
-        someone visits this web page.
-      </v-tooltip>
-      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-        <svg-icon color="#c4302b" type="mdi" :path="mdiYoutube" />
-      </a>
-      <a href="https://github.com/stern-institute/sneezles">
-        <svg-icon color="black" type="mdi" :path="mdiGithub" />
-      </a>
-      <v-spacer />
-    </v-footer>
+    <SneezlesFooter />
   </v-app>
 </template>
 
@@ -71,30 +42,17 @@ import Vue from "vue";
 import SneezleMap from "@/components/SneezleMap.vue";
 import FAQs from "@/components/FAQs.vue";
 import About from "@/components/About.vue";
-import SvgIcon from "@jamescoyle/vue-icon";
-import {
-  mdiEmail,
-  mdiGithub,
-  mdiMoleculeCo2,
-  mdiTwitter,
-  mdiYoutube,
-} from "@mdi/js";
+
+import SneezlesFooter from "@/SneezlesFooter.vue";
 
 export default Vue.extend({
   name: "App",
   components: {
+    SneezlesFooter,
     About,
     FAQs,
     SneezleMap,
-    SvgIcon,
   },
-  data: () => ({
-    mdiEmail,
-    mdiGithub,
-    mdiMoleculeCo2,
-    mdiTwitter,
-    mdiYoutube,
-  }),
 });
 </script>
 
@@ -107,8 +65,5 @@ export default Vue.extend({
   background-color: #e5e8e9;
   color: #293371;
   overflow-x: hidden;
-}
-footer * {
-  margin-left: 5px;
 }
 </style>
