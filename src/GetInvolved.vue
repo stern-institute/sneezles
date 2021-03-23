@@ -12,11 +12,11 @@
           doesn’t stop there!
         </p>
         <p>
-          From there, some of the world’s most powerful supercomputers running
-          SlikSNOS2000 inspect the contents of your Hankie capture. Your sneeze
-          is blended with the finest global dust datasets and eddie modelling,
-          giving us an unparalleled insight into the nasal health of our global
-          community.
+          From there, some of the world’s most powerful computers run
+          SlikSNOS2000 at GigaFLOPS speed to inspect the contents of your Hankie
+          capture. Your sneeze is blended with the finest global dust datasets
+          and eddie modelling, giving us an unparalleled insight into the nasal
+          health of our global community.
         </p>
         <p>
           We’ve had trouble keeping up with the interest, so are still a little
