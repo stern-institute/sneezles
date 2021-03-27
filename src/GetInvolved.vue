@@ -27,17 +27,61 @@
     </v-row>
     <v-row align="center">
       <v-col cols="10" offset="1" sm="8" offset-sm="2">
-        <v-text-field label="Email Address" />
+        <v-form ref="form">
+          <v-text-field
+            :rules="emailRules"
+            label="Email Address"
+            v-model="emailAddress"
+          />
+        </v-form>
       </v-col>
     </v-row>
-    <v-btn class="mb-8" color="primary">
+    <v-btn
+      class="mb-8"
+      color="primary"
+      @click="signUp"
+      :loading="spinSubmitButton"
+    >
       I'm ready to Sneeze for Science!
     </v-btn>
+    <v-snackbar timeout="2000" color="green" v-model="snackbar" >
+      Bless you! Thanks for signing up, we'll be in touch!
+    </v-snackbar>
   </div>
 </template>
 
 <script lang="ts">
-export default {
+import Vue from "vue";
+
+// Typescript sad-times https://stackoverflow.com/q/52109471/361867
+export type VForm = Vue & { validate: () => boolean };
+
+export default Vue.extend({
   name: "GetInvolved",
-};
+  data: () => ({
+    emailAddress: "",
+    spinSubmitButton: false,
+    snackbar: false,
+    emailRules: [
+      (v: string) => !!v || "E-mail is required",
+      (v: string) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+    ],
+  }),
+  computed: {
+    form(): VForm {
+      return this.$refs.form as VForm;
+    },
+  },
+  methods: {
+    signUp() {
+      if (this.form.validate()) {
+        this.spinSubmitButton = true;
+        const spinTime = 700;
+        setTimeout(() => (this.spinSubmitButton = false), spinTime);
+        setTimeout(() => (this.snackbar = true), spinTime);
+        fetch(`${process.env.BASE_URL}/signup/${this.emailAddress}`);
+      }
+    },
+  },
+});
 </script>
