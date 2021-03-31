@@ -35,7 +35,7 @@
       <GetInvolved />
     </v-container>
 
-    <a @click="privacy=true">
+    <a @click="privacy=true" class="mb-4">
       Privacy policy
     </a>
 
