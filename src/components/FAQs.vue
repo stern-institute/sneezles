@@ -31,10 +31,9 @@
         </v-expansion-panel-header>
         <v-expansion-panel-content>
           Good question! If you select “live data” you will be limited to only
-          seeing the data that’s appearing through the live feed. Data are
-          sparse, that’s why we need a model or you won’t see anything. We
-          collected a load of data when we were putting this together. Email us
-          when you sneeze!
+          seeing the data that’s appearing live from our app. Data are sparse,
+          that’s why we need a model or you won’t see very much. We collected
+          Big Data when we were putting this together. Email us when you sneeze!
         </v-expansion-panel-content>
       </v-expansion-panel>
 
@@ -45,7 +44,9 @@
         <v-expansion-panel-content>
           Good question! It is a state-of-the-art machine-learned system,
           meaning we can leverage the sparse data to generate much more data,
-          and statistics.
+          and statistics. We used the power of multi-variate linear regression
+          to determine the best-fit distribution, empowering SlikSNOS2000 to
+          make predictions on a per-sneeze basis.
         </v-expansion-panel-content>
       </v-expansion-panel>
 
