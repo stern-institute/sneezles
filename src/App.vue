@@ -32,9 +32,14 @@
 
       <v-divider class="mt-8 mb-4" />
       <h1>Get Involved!</h1>
-      <GetInvolved/>
-
+      <GetInvolved />
     </v-container>
+
+    <a @click="privacy=true">
+      Privacy policy
+    </a>
+
+    <Privacy :privacy.sync="privacy" />
 
     <SneezlesFooter />
   </v-app>
@@ -48,16 +53,21 @@ import About from "@/components/About.vue";
 
 import SneezlesFooter from "@/SneezlesFooter.vue";
 import GetInvolved from "@/GetInvolved.vue";
+import Privacy from "@/Privacy.vue";
 
 export default Vue.extend({
   name: "App",
   components: {
+    Privacy,
     GetInvolved,
     SneezlesFooter,
     About,
     FAQs,
     SneezleMap,
   },
+  data: () => ({
+    privacy: false,
+  }),
 });
 </script>
 
