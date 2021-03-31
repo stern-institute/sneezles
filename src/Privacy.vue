@@ -1,7 +1,7 @@
 <template>
   <v-dialog fullscreen v-model="privacy" style="z-index: 1000">
     <v-card id="privacy_card">
-      <v-toolbar dark color="primary">
+      <v-toolbar dark color="primary" width="100%" style="position: fixed">
         <v-btn icon dark @click="$emit('update:privacy', false)">
           <v-icon>close</v-icon>
         </v-btn>
@@ -9,7 +9,7 @@
       </v-toolbar>
 
       <v-container>
-        <p><em>Last updated: 31 March 2021</em></p>
+        <p class="mt-16"><em>Last updated: 31 March 2021</em></p>
 
         <p>
           The privacy of your data is a big deal to us. We store as little of
